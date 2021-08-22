@@ -5,29 +5,29 @@ namespace App\app\repository;
 use App\app\repository\interfaces\DevedorRepositoryInterface;
 use App\entities\Devedor;
 
-class DevedorRepository{
+class DevedorRepository implements DevedorRepositoryInterface{
 
     private $devedorRepository;
 
-    public function __construct(DevedorRepositoryInterface $devedorRepositoryInterface)
+    public function __construct()
     {
-        $this->devedorRepository = $devedorRepositoryInterface;
+        
     }
 
-    public function AddDevedor(Devedor $devedor):void{
-        $this->devedorRepository->Create($devedor);
+    public function Create(Devedor $devedor):void{
+        
     }
 
-    public function ShowAllDevedor()
+    public function Read()
     {
-        $this->devedorRepository->Read();
+        
     }
 
-    public function UpdateDevedor(Devedor $devedor, int $id){
-        $this->devedorRepository->Update($devedor,$id);
+    public function Update(Devedor $devedor, int $id){
+        
     }
 
-    public function DeleteDevedor(int $id)
+    public function Delete(int $id)
     {
         $this->devedorRepository->Delete($id);
     }
