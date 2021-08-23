@@ -28,7 +28,7 @@ class DevedorRepositoryDBTest extends TestCase
     }
 
 
-    public function create_devedor()
+    public function test_create_devedor()
     {
 
         $this->devedor->setNome("Paulo");
@@ -42,14 +42,14 @@ class DevedorRepositoryDBTest extends TestCase
         $this->assertIsArray($data);
     }
 
-    public function test_read_devedor()
+    public function read_devedor()
     {
         $data = $this->repository->Read();
         var_dump($data);
         $this->assertIsArray($data);
     }
 
-    public function test_update_devedor()
+    public function update_devedor()
     {
         $this->devedor->setNome("Paulo");
         $this->devedor->setCpf("585.344.703-32");
@@ -62,7 +62,7 @@ class DevedorRepositoryDBTest extends TestCase
         $this->assertIsArray($data);
     }
 
-    public function test_delete_devedor()
+    public function delete_devedor()
     {
         $data = $this->repository->Delete(1);
         $this->assertIsArray($data);
