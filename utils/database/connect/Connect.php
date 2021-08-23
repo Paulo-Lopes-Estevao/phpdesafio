@@ -2,71 +2,56 @@
 
 namespace App\utils\database\connect;
 
+use PDO;
+
 class Connect
 {
 
-	private $conn;
+	private $conexao;
 
 	public function __construct($drive, $dbname, $hostname, $username, $password)
 	{
 
-		$this->conn = new \PDO(
+		$this->conexao = new PDO(
 			"$drive:dbname=" . $dbname . ";host=" . $hostname,
 			$username,
 			$password
 		);
 	}
 
-	private function setParams($statement, $parameters = array())
+	private function paramter($statement, $parameters = array())
 	{
 
 		foreach ($parameters as $key => $value) {
-
-			$this->bindParam($statement, $key, $value);
+			$this->setParam($statement, $key, $value);
 		}
 	}
 
-	private function bindParam($statement, $key, $value)
+	private function setParam($statement, $key, $value)
 	{
 
 		$statement->bindParam($key, $value);
 	}
 
-	public function query($rawQuery, $params = array())
+
+	public function query($query, $param = array())
 	{
-		$this->conn->beginTransaction();
 		
 		try {
-			$stmt = $this->conn->prepare($rawQuery);
-
-			$this->setParams($stmt, $params);
-
-			$stmt->execute();
-
-			$this->conn->commit();
+			$stm = $this->conexao->prepare($query);
+			$this->paramter($stm, $param);
+			$stm->execute();
+			return $stm;
 		} catch (\PDOException $th) {
-			$this->conn->rollBack();
 			throw $th;
 		}
 	}
 
-	public function select($rawQuery, $params = array()): array
+	public function select($query, $param = array())
 	{
-		$this->conn->beginTransaction();
 
-		try {
-			$stmt = $this->conn->prepare($rawQuery);
+		$stmt = $this->query($query, $param);
 
-			$this->setParams($stmt, $params);
-
-			$stmt->execute();
-
-			return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-			$this->conn->commit();
-		} catch (\PDOException $th) {
-			$this->conn->rollBack();
-			throw $th;
-		}
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 }
