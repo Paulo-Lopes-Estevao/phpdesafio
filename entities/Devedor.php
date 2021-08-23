@@ -2,6 +2,8 @@
 
 namespace App\entities;
 
+use phpDocumentor\Reflection\Types\String_;
+
 class Devedor
 {
 
@@ -24,7 +26,7 @@ class Devedor
         $this->nome = $nome;
     }
 
-    public function getCpf():int
+    public function getCpf():String
     {
         return $this->cpf;
     }
@@ -64,7 +66,7 @@ class Devedor
         $this->descricaoTitulo = $descricaoTitulo;
     }
 
-    public function getValor():float
+    public function getValor():string
     {
         return $this->valor;
     }
