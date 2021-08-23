@@ -20,7 +20,7 @@ class DevedorUsecase{
 
     public function ShowAllDevedor()
     {
-        $this->devedorRepository->Read();
+        return $this->devedorRepository->Read();
     }
 
     public function UpdateDevedor(Devedor $devedor, int $id){
