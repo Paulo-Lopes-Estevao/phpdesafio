@@ -1,3 +1,7 @@
+<?php
+require_once("../vendor/autoload.php");
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-AO">
@@ -18,7 +22,7 @@
   <link rel="stylesheet" href="res/admin/library-HCB/Bootstrap v4.4.1/css/bootstrap.min.css">
 
   <!-- Simple-sidebar -->
-  <link rel="stylesheet" href="res/admin/library-HCB/style/sidebar.css" >
+  <link rel="stylesheet" href="res/admin/library-HCB/style/sidebar.css">
 
   <!-- Style  CSS -->
   <link rel="stylesheet" href="res/admin/library-HCB/style/style.css">
@@ -35,7 +39,7 @@
 </head>
 
 <body>
-  
+
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -67,7 +71,7 @@
               <i class="fa fa-dashboard mr-1"></i>
               Dashboard
             </a>
-  
+
           </li>
 
         </div>
@@ -89,7 +93,7 @@
           </ul>
 
         </li>
-        
+
 
       </ul>
     </aside>
@@ -100,7 +104,7 @@
 
       <nav class="navbar navbar-expand-lg  navbar-default">
 
-        <a href="#"  class="ml-2" id="menu-toggle"><i class="fa fa-bars"></i></a>
+        <a href="#" class="ml-2" id="menu-toggle"><i class="fa fa-bars"></i></a>
 
 
         <div id="navbar-content">
@@ -113,32 +117,32 @@
               </a>
 
               <ul class="dropdown-menu dropdown-message dropdown-menu-right wow flipInX">
-                  <li class="header border-bottom"><span>Você tem mensagens</span></li>
+                <li class="header border-bottom"><span>Você tem mensagens</span></li>
 
-                  <li class="body dropdown-backdrop">
-                   
-                    <ul class="menu">
-                      
-                      <li>
-                        <a href="post-office-box">
-                          <span class="pull-left photo"><img alt="avatar" src="res/site/images/profile/user.jpg"></span>
-                          <span class="subject">
-                            <span class="from"></span>
-                            <span class="time"></span>
-                          </span>
-                          <span class="message">
-                            
-                          </span>
-                        </a>
-                      </li>
-                      {/loop}
-                    </ul>
+                <li class="body dropdown-backdrop">
 
-                  </li>
+                  <ul class="menu">
 
-                  <li class="footer border-top"><a href="post-office-box">Veja Todas as Mensagens</a></li>
+                    <li>
+                      <a href="post-office-box">
+                        <span class="pull-left photo"><img alt="avatar" src="res/site/images/profile/user.jpg"></span>
+                        <span class="subject">
+                          <span class="from"></span>
+                          <span class="time"></span>
+                        </span>
+                        <span class="message">
+
+                        </span>
+                      </a>
+                    </li>
+                    {/loop}
+                  </ul>
+
+                </li>
+
+                <li class="footer border-top"><a href="post-office-box">Veja Todas as Mensagens</a></li>
               </ul>
-          
+
             </li>
 
             <li class="nav-item dropdown message">
@@ -148,32 +152,32 @@
               </a>
 
               <ul class="dropdown-menu dropdown-message dropdown-menu-right wow flipInX">
-                  <li class="header border-bottom"><span>Você tem Notificações</span></li>
+                <li class="header border-bottom"><span>Você tem Notificações</span></li>
 
-                  <li class="body dropdown-backdrop " >
-                   
-                    <ul class="menu">
-                      
-                      <li >
-                        <a href='posts/{function="utf8_encode($value.desurl)"}/shows?#comments-area'>
-                          <span class="pull-left photo"><img alt="avatar" src="res/site/images/profile/{$value.photos}"></span>
-                          <span class="subject">
-                            <span class="from"></span>
-                            <!--span class="time">Agora Mesmo</span--->
-                          </span>
-                          <span class="message">
-                            
-                          </span>
-                        </a>
-                      </li>
-                      {/loop}
-                    </ul>
+                <li class="body dropdown-backdrop ">
 
-                  </li>
+                  <ul class="menu">
 
-                  <li class="footer border-top"><a href="notifications">Veja Todas as Notificações</a></li>
+                    <li>
+                      <a href='posts/{function="utf8_encode($value.desurl)"}/shows?#comments-area'>
+                        <span class="pull-left photo"><img alt="avatar" src="res/site/images/profile/{$value.photos}"></span>
+                        <span class="subject">
+                          <span class="from"></span>
+                          <!--span class="time">Agora Mesmo</span--->
+                        </span>
+                        <span class="message">
+
+                        </span>
+                      </a>
+                    </li>
+                    {/loop}
+                  </ul>
+
+                </li>
+
+                <li class="footer border-top"><a href="notifications">Veja Todas as Notificações</a></li>
               </ul>
-          
+
             </li>
 
             <li id="user" class="nav-item dropdown">
@@ -204,7 +208,7 @@
       <!-- content-wrapper --->
 
       <div class="content-wrapper">
-       
+
         <div class="container-fluid">
 
           <div class="row py-5 px-3">
@@ -212,7 +216,7 @@
               <div class="cards  row  content-header">
                 <div class="content-header-left col-lg-10 col-sm-10">
                   <span class="title">Bem-vindo</span>
-                  <span><b>c</b> dashboard  <b>app</b></span>
+                  <span><b>c</b> dashboard <b>app</b></span>
                 </div>
               </div>
             </div>
@@ -221,80 +225,104 @@
 
           <div class="row  pb-5">
             <div class="col-lg-12">
-                <div class="cards cards-ds table-darks shadow">
-                    <div class="heading pb-3">
-                        <span>Lista de Usuários</span>
-                        <a href="users/create" class="ml-5 btn btn-register">Cadastrar</a>{/if}
-                        
-                        <div class="alert alert-success alert-dismissible">
-                          <button type="button" class="close" data-dismiss="alert">&times;</button>
-                          
-                        </div>
-                        
-                    </div>
-                    <div class="table-search table-pagination table-responsive">
-                        <table id="table2" class="table align-items-center">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nome</th>
-                                    <th>Cpf</th>
-                                    <th>Data Nascimento</th>
-                                    <th>Endereço</th>
-                                    <th>Descrição Titulo</th>
-                                    <th>Valor</th>
-                                    <th>Data Vencimento</th>
+              <div class="cards cards-ds table-darks shadow">
+                <div class="heading pb-3">
+                  <span>Lista de Usuários</span>
+                  <a href="users/create" class="ml-5 btn btn-register">Cadastrar</a>
 
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody class="tbody-first">
-         
-                              {loop="$users"}
-                                <tr>
-                                    <td>
-                                      <span>{$value.iduser}</span>
-                                    </td>
-                                    
-                                    <td>
-                                      <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> <strong></strong>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> <strong></strong>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span></span>
-                                    </td>
-                                    <td>
-                                      <span></span>
-                                    </td>
-                                    
-                                    <td class="text-right">
-                                      
-                                      <div class="dropdown action">
-                                          <a href="#" class="btn btn-action  dropdown-toggle-split" data-toggle="dropdown">
-                                            <i class="fa fa-ellipsis-v"></i>
-                                          </a>
-                                          <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="users/{$value.iduser}">Actualizar</a>
-                                            <a class="dropdown-item" onclick="return confirm('Deseja realmente excluir este post ?')" href="users/{$value.iduser}/delete">Eliminar</a>
-                                            <a class="dropdown-item" href="users/{$value.iduser}/password">Editar Senha</a>
-                                          </div>
-                                      </div>
-                                      
-                                    </td>
-                                </tr>
-                                {/loop}
-
-
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
+                <div class="table-search table-pagination table-responsive">
+                  <table id="table2" class="table align-items-center">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                        <th>Data Nascimento</th>
+                        <th>Endereço</th>
+                        <th>Descrição Titulo</th>
+                        <th>Valor</th>
+                        <th>Data Vencimento</th>
+
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbody-first">
+
+                      <?php
+
+
+                      use App\controllers\DevedorControllers;
+
+                      $devedor = new DevedorControllers();
+                      $show = $devedor->List();
+
+                      foreach ($show as $key => $value) {
+
+                      ?>
+                        <tr>
+                          <td>
+                            <span><?= $value["id"] ?></span>
+                          </td>
+
+                          <td>
+                            <span class="badge badge-dot mr-4">
+                              <i class="bg-warning"></i> <strong><?= $value["nome"] ?></strong>
+                            </span>
+                          </td>
+                          <td>
+                            <span class="badge badge-dot mr-4">
+                              <i class="bg-warning"></i> <strong><?= $value["cpf"] ?></strong>
+                            </span>
+                          </td>
+                          <td>
+                            <span>
+                              <i class="bg-warning"></i> <strong><?= $value["datanascimento"] ?></strong>
+                            </span>
+                          </td>
+                          <td>
+                            <span>
+                              <i class="bg-warning"></i> <strong><?= $value["endereco"] ?></strong>
+                            </span>
+                          </td>
+                          <td>
+                            <span>
+                              <i class="bg-warning"></i> <strong><?= $value["descricaotitulo"] ?></strong>
+                            </span>
+                          </td>
+                          <td>
+                            <span>
+                              <i class="bg-warning"></i> <strong><?= $value["valor"] ?></strong>
+                            </span>
+                          </td>
+                          <td>
+                            <span>
+                              <i class="bg-warning"></i> <strong><?= $value["datavencimento"] ?></strong>
+                            </span>
+                          </td>
+
+                          <td class="text-right">
+
+                            <div class="dropdown action">
+                              <a href="#" class="btn btn-action  dropdown-toggle-split" data-toggle="dropdown">
+                                <i class="fa fa-ellipsis-v"></i>
+                              </a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="users/{$value.iduser}">Actualizar</a>
+                                <a class="dropdown-item" onclick="return confirm('Deseja realmente excluir este post ?')" href="<?php #$devedor ?>">Eliminar</a>
+                                <a class="dropdown-item" href="users/{$value.iduser}/password">Editar Senha</a>
+                              </div>
+                            </div>
+
+                          </td>
+                        </tr>
+                      <?php } ?>
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -329,30 +357,29 @@
   <script src="res/admin/library-HCB/datatables/js/dataTables.bootstrap4.min.js"></script>
 
   <script type="text/javascript">
+    new WOW().init();
 
-      new WOW().init();
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
 
-      $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-      });
+    $(function() {
 
-      $(function () {
+      $('#table2').DataTable({
 
-            $('#table2').DataTable({
-
-              "language": {
-                  "sInfo": "Mostrar usuários _START_ à _END_ - Total de Usuários: _TOTAL_ ",
-                  "sInfoFiltered": "(filtered from _MAX_ total )",
-                  "sLengthMenu": "Mostrar usuários _MENU_ ",
-                  "sSearch": "",
-                  "sSearchPlaceholder": "Procurar...",
-                  "sInfoEmpty": "Mostrando 0 à 0 de usuários 0 ",
-                  "sZeroRecords": "Nenhum registro encontrado"
+        "language": {
+          "sInfo": "Mostrar usuários _START_ à _END_ - Total de Usuários: _TOTAL_ ",
+          "sInfoFiltered": "(filtered from _MAX_ total )",
+          "sLengthMenu": "Mostrar usuários _MENU_ ",
+          "sSearch": "",
+          "sSearchPlaceholder": "Procurar...",
+          "sInfoEmpty": "Mostrando 0 à 0 de usuários 0 ",
+          "sZeroRecords": "Nenhum registro encontrado"
         }
-          });
       });
-</script>
+    });
+  </script>
 </body>
 
 </html>
