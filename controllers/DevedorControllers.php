@@ -5,7 +5,7 @@ namespace App\controllers;
 use App\app\repository\DevedorRepository;
 use App\app\usecase\DevedorUsecase;
 
-class DevedorControllers{
+class DevedorControllers extends BaseController{
 
 
     protected $usecase;
@@ -14,9 +14,11 @@ class DevedorControllers{
     {
         $this->usecase = new DevedorUsecase(new DevedorRepository);       
     }
-    public function List()
+    public function index()
     {
-        return $this->usecase->ShowAllDevedor();
+        $List = $this->usecase->ShowAllDevedor();
+        $data["list"]  =  $List;
+        $this->views("index",$data);
     }
 
     public function Delete(int $id)
