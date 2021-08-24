@@ -1,8 +1,8 @@
 <?php
 
-namespace app\config;
+namespace App\config;
 
-use app\config\Config;
+use App\config\Config;
 use ReflectionMethod;
 
 class Routers {

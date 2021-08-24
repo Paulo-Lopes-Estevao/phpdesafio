@@ -1,10 +1,10 @@
 <?php
 
-namespace app\config;
+namespace App\config;
 
 class Config{
 
-    public const CONTROLLER_DEFAULT = "Welcome";
+    public const CONTROLLER_DEFAULT = "DevedorControllers";
 
     public const METHOD_DEFAULT = "index";
 
@@ -14,7 +14,7 @@ class Config{
 
     public const PARAM = [];
 
-    public const NAMESPACE_CONTROLLER = '\app\controllers\\';
+    public const NAMESPACE_CONTROLLER = '\App\controllers\\';
 
     public const ROUTERS = [
         'Usuario',
