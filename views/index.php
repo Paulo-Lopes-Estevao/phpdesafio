@@ -299,7 +299,7 @@
                               </a>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="users/{$value.iduser}">Actualizar</a>
-                                <a class="dropdown-item" onclick="return confirm('Deseja realmente excluir este post ?')" href="<?php #$devedor ?>">Eliminar</a>
+                                <a class="dropdown-item" onclick="return confirm('Deseja realmente excluir este post ?')" href="http://localhost/desafiophp/DevedorControllers/delete/<?= $value["id"] ?>">Eliminar</a>
                                 <a class="dropdown-item" href="users/{$value.iduser}/password">Editar Senha</a>
                               </div>
                             </div>

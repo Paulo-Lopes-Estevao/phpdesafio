@@ -21,9 +21,10 @@ class DevedorControllers extends BaseController{
         $this->views("index",$data);
     }
 
-    public function Delete(int $id)
+    public function delete(int $id)
     {
-        return $this->usecase->DeleteDevedor($id);
+        echo $id;
+        #return $this->usecase->DeleteDevedor($id);
     }
 
 }

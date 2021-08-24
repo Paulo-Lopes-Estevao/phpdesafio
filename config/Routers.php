@@ -1,6 +1,6 @@
 <?php
 
-namespace App\config;
+namespace app\config;
 
 use App\config\Config;
 use ReflectionMethod;
@@ -19,15 +19,19 @@ class Routers {
     public function setUrl(){
 
         if(isset($this->url['url'])){
-            $url = explode('/', $this->url['url']);
+            
+            $url = trim(rtrim($this->url['url'], '/'));
+            $url = explode('/', $url);
 
             $this->url['url'] = $url;
-
+            $controller_default = Config::CONTROLLER_DEFAULT;
             if(isset($this->url['url'][Config::CONTROLLER_INDEX])){
                 $class = ucfirst($this->url['url'][Config::CONTROLLER_INDEX]);
                 $controller = Config::NAMESPACE_CONTROLLER . ucfirst($this->url['url'][Config::CONTROLLER_INDEX]);
-                
-                if(!in_array($class, Config::ROUTERS)){
+                $data = Config::ROUTERS;
+                array_push($data, $controller_default);
+
+                if(!in_array($class, $data)){
                     echo "Controller ". $class ." não existe!";
                     exit();
                 }
@@ -51,6 +55,7 @@ class Routers {
                                 exit();
                             } else{
                                 try {
+                                    array_shift($this->url['url']);
                                     array_shift($this->url['url']);
                                     call_user_func_array(array($controller,$method), $this->url['url']);
                                 } catch (\Exception $ex) {
