@@ -1,7 +1,3 @@
-<?php
-require_once("../vendor/autoload.php");
-?>
-
 <!DOCTYPE html>
 
 <html lang="pt-AO">
@@ -14,26 +10,26 @@ require_once("../vendor/autoload.php");
 
   <meta name="author" content="Walalétec & JandyEgi.  Desenvolvido Por Herlander Bento">
 
-  <title>JandyEgi - Prestação de serviços.</title>
+  <title><?= $show["list"] ?></title>
 
-  <link rel="shortcut icon" href="res/site/icon/JandyEgi/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./views/res/site/icon/JandyEgi/favicon.png" type="image/x-icon">
 
   <!-- Bootstrap  CSS -->
-  <link rel="stylesheet" href="res/admin/library-HCB/Bootstrap v4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./views/res/admin/library-HCB/Bootstrap v4.4.1/css/bootstrap.min.css">
 
   <!-- Simple-sidebar -->
-  <link rel="stylesheet" href="res/admin/library-HCB/style/sidebar.css">
+  <link rel="stylesheet" href="./views/res/admin/library-HCB/style/sidebar.css">
 
   <!-- Style  CSS -->
-  <link rel="stylesheet" href="res/admin/library-HCB/style/style.css">
+  <link rel="stylesheet" href="./views/res/admin/library-HCB/style/style.css">
 
   <!-- Font-awesome  CSS -->
-  <link rel="stylesheet" href="res/admin/library-HCB/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./views/res/admin/library-HCB/font-awesome/css/font-awesome.min.css">
 
   <!-- MDB CSS -->
-  <link rel="stylesheet" href="res/admin/library-HCB/mdb/css/mdb.min.css">
+  <link rel="stylesheet" href="./views/res/admin/library-HCB/mdb/css/mdb.min.css">
 
-  <link rel="stylesheet" href="res/admin/library-HCB/datatables/css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="./views/res/admin/library-HCB/datatables/css/dataTables.bootstrap4.css">
 
 
 </head>
@@ -125,7 +121,7 @@ require_once("../vendor/autoload.php");
 
                     <li>
                       <a href="post-office-box">
-                        <span class="pull-left photo"><img alt="avatar" src="res/site/images/profile/user.jpg"></span>
+                        <span class="pull-left photo"><img alt="avatar" src="./views/res/site/images/profile/user.jpg"></span>
                         <span class="subject">
                           <span class="from"></span>
                           <span class="time"></span>
@@ -160,7 +156,7 @@ require_once("../vendor/autoload.php");
 
                     <li>
                       <a href='posts/{function="utf8_encode($value.desurl)"}/shows?#comments-area'>
-                        <span class="pull-left photo"><img alt="avatar" src="res/site/images/profile/{$value.photos}"></span>
+                        <span class="pull-left photo"><img alt="avatar" src="./views/res/site/images/profile/{$value.photos}"></span>
                         <span class="subject">
                           <span class="from"></span>
                           <!--span class="time">Agora Mesmo</span--->
@@ -251,13 +247,7 @@ require_once("../vendor/autoload.php");
 
                       <?php
 
-
-                      use App\controllers\DevedorControllers;
-
-                      $devedor = new DevedorControllers();
-                      $show = $devedor->List();
-
-                      foreach ($show as $key => $value) {
+                      foreach ($data["list"] as $key => $value) {
 
                       ?>
                         <tr>
@@ -341,20 +331,20 @@ require_once("../vendor/autoload.php");
   <!-- /#wrapper -->
 
   <!-- jQuery -->
-  <script src="res/admin/library-HCB/jquery v3.4.1/jquery.min.js"></script>
+  <script src="./views/res/admin/library-HCB/jquery v3.4.1/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="res/admin/library-HCB/Bootstrap v4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="./views/res/admin/library-HCB/Bootstrap v4.4.1/js/bootstrap.bundle.min.js"></script>
 
   <!-- MDB core JavaScript -->
-  <script src="res/admin/library-HCB/mdb/mdb.js"></script>
+  <script src="./views/res/admin/library-HCB/mdb/mdb.js"></script>
 
   <!-- Popper core JavaScript -->
-  <script src="res/admin/library-HCB/mdb/js/popper.min.js"></script>
+  <script src="./views/res/admin/library-HCB/mdb/js/popper.min.js"></script>
 
-  <script src="res/admin/library-HCB/datatables/js/jquery.dataTables.js"></script>
+  <script src="./views/res/admin/library-HCB/datatables/js/jquery.dataTables.js"></script>
 
-  <script src="res/admin/library-HCB/datatables/js/dataTables.bootstrap4.min.js"></script>
+  <script src="./views/res/admin/library-HCB/datatables/js/dataTables.bootstrap4.min.js"></script>
 
   <script type="text/javascript">
     new WOW().init();
